@@ -20,8 +20,8 @@ docker-compose version 1.26.0, build d4451659
 docker-compose build
 docker-compose up -d
 ```
-※ 一回作ってあったらDBのテーブルデータ？消さないとエラーになる
-※ 再実施する場合はmysql_dataを削除すること
+※ 一回作ってあったらDBのテーブルデータ？消さないとエラーになる  
+※ 再実施する場合はmysql_dataを削除すること  
 
 ## apiのコンテナに入って作業します
 ```
