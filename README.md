@@ -1,7 +1,7 @@
 # flask-mysql-restfulapi-on-docker
 Flask環境とMySQL環境をDocker化  
 Flask環境でRESTfulAPIを利用可能。ORMはSQLAlchemyを利用  
-※ 基本参考資料を参考にしながら作成したが、動かないので改良。動作確認済み(2021/08/17)
+※ 基本参考資料を参考にしながら作成したが、動かないので改良。動作確認済み(2021/08/17)  
 ※ 開発環境はUbuntu20.04(wsl2)
 
 # dockerのバージョン
