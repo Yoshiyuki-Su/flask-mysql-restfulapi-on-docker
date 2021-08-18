@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./src:/src"
+    tty: true
+    environment:
+      DB_HOST: db
+      TZ: Asia/Tokyo
+      FLASK_APP: run.py
+      FLASK_ENV: development
+    command: flask run -h 0.0.0.0
+  db:
+    build:
+      context: ./mysql/
+    command: bash -c 'usermod -o -u 1000 mysql; groupmod -o -g 500 mysql; chown -R mysql:root /var/run/mysqld/; /entrypoint.sh mysqld --user=mysql --console'
+    volumes:
+      - ./mysql/mysql_data:/var/lib/mysql # データの永続化
+      - ./mysql/sqls:/docker-entrypoint-initdb.d # 初期化時に実行するSQL
+    environment:
+      - MYSQL_ROOT_PASSWORD=root # rootパスワードの設定
